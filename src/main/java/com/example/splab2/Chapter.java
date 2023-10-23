@@ -21,5 +21,14 @@ public class Chapter {
     }
 
     private Chapter parentChapter; // Self-referencing relationship
+
+    public int createSubChapter(String s) {
+    }
+
+    public SubChapter getSubChapter(int indexSubChapterOneOne) {
+    }
+
+    public void createNewTable(String s) {
+    }
     // Other chapter-related properties and methods
 }

@@ -19,5 +19,12 @@ public class Book {
     }
 
 
+    public void addAuthor(Author author) {
+    }
 
+    public int createChapter(String s) {
+    }
+
+    public Chapter getChapter(int indexChapterOne) {
+    }
 }

@@ -46,5 +46,14 @@ public class SubChapter extends Chapter {
 
     private List<Table> tables;
     private Chapter chapter;
+
+    public void createNewParagraph(String s) {
+    }
+
+    public void createNewImage(String s) {
+    }
+
+    public void print() {
+    }
     // Other sub-chapter-related properties and methods
 }
