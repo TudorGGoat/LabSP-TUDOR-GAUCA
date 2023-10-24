@@ -1,12 +1,9 @@
 package com.example.splab2;
 
-public class Table implements Element{
+public class Section implements Element{
     private String title;
-    private void print(){
 
-    }
-
-    public Table(String title) {
+    public Section(String title) {
         this.title = title;
     }
 
@@ -20,9 +17,8 @@ public class Table implements Element{
 
     @Override
     public String toString() {
-        return "Table{" +
+        return "Section{" +
                 "title='" + title + '\'' +
                 '}';
     }
 }
-

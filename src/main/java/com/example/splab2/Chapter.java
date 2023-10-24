@@ -26,5 +26,5 @@ public class Chapter {
                 "name='" + name + '\'' +
                 '}';
     }
-}  // Other chapter-related properties and methods
+}
 

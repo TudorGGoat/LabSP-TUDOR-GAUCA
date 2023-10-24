@@ -1,6 +1,6 @@
 package com.example.splab2;
 
-public class Paragraph {
+public class Paragraph implements Element{
     private String text;
     private void print(){
 
