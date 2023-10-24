@@ -2,34 +2,50 @@ package com.example.splab2;
 
 import java.util.List;
 
-public class Book extends Section{
-    private String title;
+import java.util.ArrayList;
 
-    public Book(String title, String title1) {
-        super(title);
-        this.title = title1;
+public class Book{
+    private String title;
+    private List <Author> authorList = new ArrayList<Author>();
+    private List <Element> elementsList = new ArrayList<Element>();
+
+    public Book(String title) {
+        this.title = title;
+    }
+    public void addAuthor(Author author){
+        authorList.add(author);
+    }
+    public void addContent(Element element){
+        elementsList.add(element);
     }
 
-    @Override
     public String getTitle() {
         return title;
     }
 
-    @Override
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                '}';
+    public List<Author> getAuthorList() {
+        return authorList;
     }
 
-    public void addAuthor(Author rpGheo) {
+    public void setAuthorList(List<Author> authorList) {
+        this.authorList = authorList;
     }
 
-    public void addContent(Paragraph paragraph) {
+    public List<Element> getElementsList() {
+        return elementsList;
+    }
+
+    public void setElementsList(List<Element> elementsList) {
+        this.elementsList = elementsList;
+    }
+
+    public void print(){
+        System.out.println(title);
+        authorList.forEach(e -> e.print());
+        elementsList.forEach(e -> e.print());
     }
 }

@@ -2,14 +2,11 @@ package com.example.splab2;
 
 import java.util.List;
 
-public class Author extends Book{
+public class Author{
     private String name;
-    private String surname;
 
-    public Author(String title, String title1, String name, String surname) {
-        super(title, title1);
+    public Author(String name) {
         this.name = name;
-        this.surname = surname;
     }
 
     public String getName() {
@@ -19,20 +16,7 @@ public class Author extends Book{
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    @Override
-    public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
+    public void print() {
+        System.out.println(name);
     }
 }

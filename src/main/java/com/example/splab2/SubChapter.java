@@ -1,7 +1,5 @@
 package com.example.splab2;
 
-import java.awt.*;
-import java.util.List;
 public class SubChapter {
     private String name;
     private void print(){
@@ -22,7 +20,7 @@ public class SubChapter {
 
     @Override
     public String toString() {
-        return "SubChapter{" +
+        return "ro.uvt.info.splab.SubChapter{" +
                 "name='" + name + '\'' +
                 '}';
     }

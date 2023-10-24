@@ -4,27 +4,18 @@ import java.util.List;
 
 public class Chapter {
     private String name;
-    private void print(){
-
-    }
+    private List<Paragraph> paragraphList;
 
     public Chapter(String name) {
         this.name = name;
-    }
 
-    public String getName() {
-        return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public void addParagraph(String pText) {
+        Paragraph paragraph = new Paragraph(pText);
+        paragraphList.add(paragraph);
     }
-
-    @Override
-    public String toString() {
-        return "Chapter{" +
-                "name='" + name + '\'' +
-                '}';
+    public void print() {
+        System.out.println(name);
     }
 }
 

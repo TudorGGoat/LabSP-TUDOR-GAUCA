@@ -2,26 +2,23 @@ package com.example.splab2;
 
 public class Paragraph implements Element{
     private String text;
-    private void print(){
-
-    }
 
     public Paragraph(String text) {
         this.text = text;
     }
+    @Override
+    public void add(Element e) {
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 
     @Override
-    public String toString() {
-        return "Paragraph{" +
-                "text='" + text + '\'' +
-                '}';
+    public void remove(Element e) {
+
     }
+
+    public void print() {
+        System.out.println(text);
+    }
+
+
 }
