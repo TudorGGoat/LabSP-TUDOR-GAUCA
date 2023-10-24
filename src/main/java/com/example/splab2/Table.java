@@ -1,31 +1,27 @@
 package com.example.splab2;
 
 public class Table {
+    private String title;
+    private void print(){
 
-    private Long id;
-    private String tableContent;
+    }
+
+    public Table(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     @Override
     public String toString() {
         return "Table{" +
-                "id=" + id +
-                ", tableContent='" + tableContent + '\'' +
-                ", subChapter=" + subChapter +
+                "title='" + title + '\'' +
                 '}';
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Table(Long id) {
-        this.id = id;
-    }
-
-    private SubChapter subChapter;
-    // Other table-related properties and methods
 }

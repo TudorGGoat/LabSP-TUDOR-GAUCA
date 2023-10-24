@@ -3,28 +3,27 @@ package com.example.splab2;
 import java.util.List;
 
 public class Book {
+    private String name;
+    private void print(){
 
-    private Long id;
-    private String title;
-
-
-    private List<Author> authors;
-    private List<Chapter> chapters;
-    public Book() {
-        // Default constructor
     }
 
-    public Book(String title) {
-        this.title = title;
+    public Book(String name) {
+        this.name = name;
     }
 
-
-    public void addAuthor(Author author) {
+    public String getName() {
+        return name;
     }
 
-    public int createChapter(String s) {
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Chapter getChapter(int indexChapterOne) {
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

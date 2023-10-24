@@ -3,32 +3,28 @@ package com.example.splab2;
 import java.util.List;
 
 public class Chapter {
-    private Long id;
-    private String title;
-    private Book book;
-    private List<Chapter> subChapters;
+    private String name;
+    private void print(){
 
-    public Long getId() {
-        return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Chapter(String name) {
+        this.name = name;
     }
 
-    public Chapter(Long id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
-    private Chapter parentChapter; // Self-referencing relationship
-
-    public int createSubChapter(String s) {
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public SubChapter getSubChapter(int indexSubChapterOneOne) {
+    @Override
+    public String toString() {
+        return "Chapter{" +
+                "name='" + name + '\'' +
+                '}';
     }
+}  // Other chapter-related properties and methods
 
-    public void createNewTable(String s) {
-    }
-    // Other chapter-related properties and methods
-}
