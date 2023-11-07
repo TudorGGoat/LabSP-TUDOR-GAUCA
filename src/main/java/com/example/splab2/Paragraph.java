@@ -1,6 +1,6 @@
 package com.example.splab2;
 
-public class Paragraph implements Element{
+public class Paragraph implements Element, Strategy{
     private String text;
 
     public Paragraph(String text) {
@@ -16,9 +16,21 @@ public class Paragraph implements Element{
 
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
     public void print() {
+        System.out.print("Paragraph: ");
         System.out.println(text);
     }
 
-
+    @Override
+    public String render(Paragraph paragraph, Context context) {
+        return null;
+    }
 }

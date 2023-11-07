@@ -17,6 +17,7 @@ public class Author{
         this.name = name;
     }
     public void print() {
+        System.out.print("Authors: ");
         System.out.println(name);
     }
 }

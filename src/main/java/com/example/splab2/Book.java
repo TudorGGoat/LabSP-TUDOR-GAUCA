@@ -1,9 +1,7 @@
 package com.example.splab2;
 
-import java.util.List;
-
 import java.util.ArrayList;
-
+import java.util.List;
 public class Book{
     private String title;
     private List <Author> authorList = new ArrayList<Author>();
@@ -44,6 +42,7 @@ public class Book{
     }
 
     public void print(){
+        System.out.print("Book: ");
         System.out.println(title);
         authorList.forEach(e -> e.print());
         elementsList.forEach(e -> e.print());
