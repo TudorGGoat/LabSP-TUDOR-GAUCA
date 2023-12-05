@@ -1,21 +1,20 @@
 package com.example.splab2;
 
-public class AlignRight implements Strategy{
+public class AlignRight implements AlignStrategy{
     @Override
     public String render(Paragraph paragraph, Context context) {
-        int maxWidth = 60;
-        String text = paragraph.getText();
+        @Override
+        public void render(Paragraph paragraph, Context context) {
+            String text = paragraph.getText();
+            int length = text.length();
+            int pageWidth = context.getPageWidth();
 
-        if (text.length() >= maxWidth) {
-            return text; // Text is longer than or equal to the specified width, no alignment needed.
-        } else {
-            int spacesToAdd = maxWidth - text.length();
-            StringBuilder alignedText = new StringBuilder();
-            for (int i = 0; i < spacesToAdd; i++) {
-                alignedText.append(" ");
+            int spacesNeeded = pageWidth - length;
+
+            for (int i = 0; i < spacesNeeded; i++) {
+                System.out.print(" ");
             }
-            alignedText.append(text);
-            return alignedText.toString();
+
+            System.out.println(text);
         }
-    }
 }
