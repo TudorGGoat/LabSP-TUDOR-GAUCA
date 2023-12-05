@@ -1,11 +1,15 @@
 package com.example.splab2;
 
-public interface Element {
+import lombok.Data;
 
-    void add(Element e);
-    default Element getElement() {
-        return this;
-    };
-    void remove(Element e);
+import com.example.splab2.Visitor;
+import java.util.concurrent.TimeUnit;
+
+@Data
+public interface Element {
     void print();
+    void add(Element element);
+    void remove(Element element);
+    Element get(int id);
+    void accept(Visitor v);
 }

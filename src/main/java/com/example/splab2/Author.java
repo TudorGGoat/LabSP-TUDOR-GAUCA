@@ -2,22 +2,18 @@ package com.example.splab2;
 
 import java.util.List;
 
-public class Author{
+public class Author {
     private String name;
+    private String surname;
 
-    public Author(String name) {
+    public Author(String name, String surname) {
         this.name = name;
+        this.surname=surname;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     public void print() {
-        System.out.print("Authors: ");
-        System.out.println(name);
+
+        System.out.println("Name: " + name + ", surname: " + surname);
     }
+}
 }

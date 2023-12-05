@@ -1,38 +1,36 @@
 package com.example.splab2;
 
+import lombok.Data;
+@Data
 public class Table implements Element{
-    private String title;
+    private String something;
 
-    public Table(String title) {
-        this.title = title;
+    public Table(String something) {
+        this.something = something;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public void add(Element e) {
-
-    }
-
-    @Override
-    public Element getElement() {
-        return Element.super.getElement();
-    }
-
-    @Override
-    public void remove(Element e) {
-
-    }
-
-    @Override
     public void print() {
+        System.out.println("Something: " + something);
+    }
 
+    @Override
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int id) {
+        return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitTable(this);
     }
 }
 

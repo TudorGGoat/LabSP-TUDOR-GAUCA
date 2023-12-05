@@ -1,40 +1,39 @@
 package com.example.splab2;
 
 public class RenderContentVisitor implements Visitor{
+
     @Override
     public void visitBook(Book book) {
-        System.out.print("Book: ");
-        System.out.println(book.getTitle());
-        book.getAuthorList().forEach(e -> e.print());
-        book.getAuthorList().forEach(e -> e.print());
+        book.print();
     }
 
     @Override
     public void visitSection(Section section) {
-        System.out.println(section.getTitle());
-        for (Element element : section.getElementList()) {
-            element.print();
-        }
+        section.print();
     }
 
     @Override
     public void visitTableOfContents(TableOfContents tableOfContents) {
-
+        tableOfContents.print();
     }
 
     @Override
     public void visitParagraph(Paragraph paragraph) {
-        System.out.print("Paragraph: ");
-        System.out.println(paragraph.getText());
+        paragraph.print();
+    }
+
+    @Override
+    public void visitImageProxy(ImageProxy imageProxy) {
+        imageProxy.print();
     }
 
     @Override
     public void visitImage(Image image) {
-        System.out.println(image.getUrl());
+        image.print();
     }
 
     @Override
     public void visitTable(Table table) {
-
+        table.print();
     }
 }

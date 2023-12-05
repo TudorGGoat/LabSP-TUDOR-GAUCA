@@ -1,36 +1,60 @@
 package com.example.splab2;
 
-public class Paragraph implements Element, Strategy{
+import lombok.Data;
+
+@Data
+public class Paragraph implements Element{
     private String text;
+    private AlignStrategy textAlignment;
+
+    public Paragraph(String text, AlignStrategy textAlignment) {
+        this.text = text;
+        this.textAlignment=textAlignment;
+    }
 
     public Paragraph(String text) {
         this.text = text;
     }
-    @Override
-    public void add(Element e) {
 
+    public Paragraph(AlignStrategy textAlignment) {
+        this.textAlignment = textAlignment;
     }
 
-    @Override
-    public void remove(Element e) {
-
+    public void render(Paragraph paragraph, Context context){
+        textAlignment.render(paragraph, context);
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    public void setAlignStrategy(AlignStrategy alignStrategy) {
+        this.textAlignment = alignStrategy;
     }
 
     public void print() {
-        System.out.print("Paragraph: ");
-        System.out.println(text);
+        System.out.println("Text: " + text);
+        if (textAlignment != null) {
+            textAlignment.render(this, new Context());
+        } else {
+            System.out.println(text);
+        }
     }
 
     @Override
-    public String render(Paragraph paragraph, Context context) {
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int id) {
         return null;
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
+    }
+
 }
