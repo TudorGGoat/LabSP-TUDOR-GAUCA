@@ -1,4 +1,4 @@
-package com.example.splab2;
+package com.example.splab2.model;
 
 public class Context {
     private int pageWidth=156;

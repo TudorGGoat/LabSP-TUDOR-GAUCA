@@ -1,4 +1,4 @@
-package com.example.splab2;
+package com.example.splab2.model;
 
 public interface Picture {
     String url();

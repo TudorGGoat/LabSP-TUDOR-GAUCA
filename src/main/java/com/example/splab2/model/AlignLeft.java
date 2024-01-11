@@ -1,4 +1,4 @@
-package com.example.splab2;
+package com.example.splab2.model;
 
 public class AlignLeft implements AlignStrategy{
 

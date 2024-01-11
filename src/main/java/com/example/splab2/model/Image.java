@@ -1,4 +1,8 @@
-package com.example.splab2;
+package com.example.splab2.model;
+
+import lombok.Data;
+
+import java.util.concurrent.TimeUnit;
 
 import lombok.Data;
 
@@ -7,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 @Data
 public class Image implements Element, Picture{
     private String imageName;
+
 
     public Image(String name) {
         imageName = name;
