@@ -1,26 +1,17 @@
 package com.example.splab2;
 
 import lombok.Data;
-import com.example.splab2.Visitor;
-
-import java.util.concurrent.TimeUnit;
 
 @Data
-public class Image implements Element, Picture{
-    private String imageName;
+public class Image implements Element{
+    private String url;
 
-
-    public Image(String name) {
-        imageName = name;
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public Image(String url) {
+        this.url = url;
     }
 
     public void print() {
-        System.out.println("Image with name: " + imageName);
+        System.out.println("Image with url: " + url);
     }
 
     @Override
@@ -35,16 +26,6 @@ public class Image implements Element, Picture{
 
     @Override
     public Element get(int id) {
-        return null;
-    }
-
-    @Override
-    public void accept(Visitor v) {
-        v.visitImage(this);
-    }
-
-    @Override
-    public String url() {
         return null;
     }
 }

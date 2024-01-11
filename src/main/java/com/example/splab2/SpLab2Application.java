@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpLab2Application {
 
     public static void main(String[] args) {
+        //SpringApplication.run(SpLabApplication.class, args);
         Book noapteBuna = new Book("Noapte buna, copii!");
         Author rpGheo = new Author("Radu Pavel", " Gheo");
         noapteBuna.addAuthor(rpGheo);
@@ -23,9 +24,7 @@ public class SpLab2Application {
         cap111.add(new Paragraph("Text from subchapter 1.1.1"));
         cap111.add(cap1111);
         cap1111.add(new Image("Image subchapter 1.1.1.1"));
-        //noapteBuna.accept(new RenderContentVisitor());
-        new RenderContentVisitor().visitBook(noapteBuna);
-        System.out.println(new BookController().printStatistics());
+        noapteBuna.print();
     }
     }
 

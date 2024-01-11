@@ -1,8 +1,6 @@
 package com.example.splab2;
 
 import java.util.ArrayList;
-import java.util.List;
-
 
 public class Section implements Element{
     private String title;
@@ -33,10 +31,5 @@ public class Section implements Element{
     @Override
     public Element get(int id) {
         return elements.get(id);
-    }
-
-    @Override
-    public void accept(Visitor v) {
-        v.visitSection(this);
     }
 }

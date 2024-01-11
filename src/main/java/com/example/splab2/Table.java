@@ -1,6 +1,7 @@
 package com.example.splab2;
 
 import lombok.Data;
+
 @Data
 public class Table implements Element{
     private String something;
@@ -26,11 +27,6 @@ public class Table implements Element{
     @Override
     public Element get(int id) {
         return null;
-    }
-
-    @Override
-    public void accept(Visitor v) {
-        v.visitTable(this);
     }
 }
 
