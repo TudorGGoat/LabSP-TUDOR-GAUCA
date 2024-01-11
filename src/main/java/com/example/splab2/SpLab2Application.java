@@ -1,12 +1,19 @@
 package com.example.splab2;
 
-import com.example.splab2.model.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.splab2.example.ClientComponent;
+import com.example.splab2.example.SingletonComponent;
+import com.example.splab2.example.TransientComponent;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
+import com.example.splab2.example.controllers.BookController;
+import com.example.splab2.model.*;
+import com.example.splab2.services.*;
 
 @SpringBootApplication
 public class SpLab2Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //SpringApplication.run(SpLabApplication.class, args);
         Book noapteBuna = new Book("Noapte buna, copii!");
         Author rpGheo = new Author("Radu Pavel", " Gheo");
@@ -24,7 +31,18 @@ public class SpLab2Application {
         cap111.add(new Paragraph("Text from subchapter 1.1.1"));
         cap111.add(cap1111);
         cap1111.add(new Image("Image subchapter 1.1.1.1"));
-        noapteBuna.print();
+
+        String filePath = "books.txt";
+
+        Command bookSaveCommand = new SaveBookCommand(noapteBuna, filePath);
+        Invoker invoker = new Invoker();
+        invoker.setCommand(bookSaveCommand);
+
+        invoker.executeCommand();
+
+
+
     }
-    }
+
+}
 

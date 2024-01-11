@@ -1,8 +1,11 @@
 package com.example.splab2.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Book extends Section{
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+public class Book extends Section implements Serializable {
     private ArrayList<Author> authors=new ArrayList<>();
     public Book(String title) {
         super(title);

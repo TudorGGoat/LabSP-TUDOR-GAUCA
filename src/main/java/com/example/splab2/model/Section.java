@@ -2,8 +2,11 @@ package com.example.splab2.model;
 
 import com.example.splab2.services.Visitor;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import java.util.ArrayList;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Section implements Element{
     private String title;
     private ArrayList<Element> elements=new ArrayList<>();
