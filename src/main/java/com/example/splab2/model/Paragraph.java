@@ -1,7 +1,8 @@
 package com.example.splab2.model;
 
 import lombok.Data;
-
+import com.example.splab2.services.AlignStrategy;
+import com.example.splab2.services.Visitor;
 
 
 @Data
@@ -52,6 +53,11 @@ public class Paragraph implements Element{
     @Override
     public Element get(int id) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
     }
 
 }

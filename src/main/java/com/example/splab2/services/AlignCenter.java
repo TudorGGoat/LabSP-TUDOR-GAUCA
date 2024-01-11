@@ -1,4 +1,7 @@
-package com.example.splab2.model;
+package com.example.splab2.services;
+
+import com.example.splab2.model.Context;
+import com.example.splab2.model.Paragraph;
 
 public class AlignCenter implements AlignStrategy{
     @Override
