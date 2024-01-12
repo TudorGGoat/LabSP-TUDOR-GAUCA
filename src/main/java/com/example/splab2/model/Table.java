@@ -1,14 +1,23 @@
 package com.example.splab2.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 import com.example.splab2.services.Visitor;
 
 @Data
-public class Table implements Element{
+@Entity
+public class Table extends BaseElement{
+    @Id
+    private int id;
     private String something;
 
     public Table(String something) {
         this.something = something;
+    }
+
+    public Table() {
+
     }
 
     public void print() {

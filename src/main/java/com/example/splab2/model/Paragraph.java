@@ -1,13 +1,20 @@
 package com.example.splab2.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.Data;
 import com.example.splab2.services.AlignStrategy;
 import com.example.splab2.services.Visitor;
 
 
 @Data
-public class Paragraph implements Element{
+@Entity
+public class Paragraph extends BaseElement{
+    @Id
+    private int id;
     private String text;
+    @Transient
     private AlignStrategy textAlignment;
 
     public Paragraph(String text, AlignStrategy textAlignment) {
@@ -21,6 +28,10 @@ public class Paragraph implements Element{
 
     public Paragraph(AlignStrategy textAlignment) {
         this.textAlignment = textAlignment;
+    }
+
+    public Paragraph() {
+
     }
 
     public void render(Paragraph paragraph, Context context){

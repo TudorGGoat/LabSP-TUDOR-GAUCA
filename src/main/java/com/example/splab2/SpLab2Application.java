@@ -6,7 +6,7 @@ import com.example.splab2.example.SingletonComponent;
 import com.example.splab2.example.TransientComponent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import com.example.splab2.example.controllers.BookController;
+import com.example.splab2.example.controllers.BooksController;
 import com.example.splab2.model.*;
 import com.example.splab2.services.*;
 
@@ -14,7 +14,7 @@ import com.example.splab2.services.*;
 public class SpLab2Application {
 
     public static void main(String[] args) throws Exception {
-        //SpringApplication.run(SpLabApplication.class, args);
+        SpringApplication.run(SpLab2Application.class, args);
         Book noapteBuna = new Book("Noapte buna, copii!");
         Author rpGheo = new Author("Radu Pavel", " Gheo");
         noapteBuna.addAuthor(rpGheo);
@@ -32,13 +32,13 @@ public class SpLab2Application {
         cap111.add(cap1111);
         cap1111.add(new Image("Image subchapter 1.1.1.1"));
 
-        String filePath = "books.txt";
-
-        Command bookSaveCommand = new SaveBookCommand(noapteBuna, filePath);
-        Invoker invoker = new Invoker();
-        invoker.setCommand(bookSaveCommand);
-
-        invoker.executeCommand();
+//        String filePath = "books.txt";
+//
+//        Command bookSaveCommand = new SaveBookCommand(noapteBuna, filePath);
+//        Invoker invoker = new Invoker();
+//        invoker.setCommand(bookSaveCommand);
+//
+//        invoker.executeCommand();
 
 
 

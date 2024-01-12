@@ -1,14 +1,19 @@
 package com.example.splab2.model;
 
-import com.example.splab2.services.Visitor;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-
+import jakarta.persistence.*;
+import lombok.Data;
+import com.example.splab2.services.Visitor;
 import java.util.ArrayList;
 
+@Data
+@Entity
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Section implements Element{
+public class Section extends BaseElement{
+    @Id
+    private int id;
     private String title;
+    @OneToMany(targetEntity = BaseElement.class)
     private ArrayList<Element> elements=new ArrayList<>();
 
     public Section(String title) {
@@ -21,6 +26,9 @@ public class Section implements Element{
         for (Element element : elements) {
             element.print();
         }
+    }
+
+    public Section() {
     }
 
     @Override

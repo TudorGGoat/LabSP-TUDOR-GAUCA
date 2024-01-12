@@ -1,21 +1,21 @@
 package com.example.splab2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import com.example.splab2.services.Visitor;
 
-
 @Data
 @Entity
-public class TableOfContents implements Element{
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class BaseElement implements Element{
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String something;
 
     @Override
     public void print() {
-        System.out.println("Something: " + something);
+
     }
 
     @Override
@@ -35,6 +35,6 @@ public class TableOfContents implements Element{
 
     @Override
     public void accept(Visitor v) {
-        v.visitTableOfContents(this);
+
     }
 }
