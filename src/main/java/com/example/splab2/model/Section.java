@@ -3,10 +3,12 @@ package com.example.splab2.model;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import com.example.splab2.services.Visitor;
 import java.util.ArrayList;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Section extends BaseElement{
