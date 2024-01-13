@@ -1,17 +1,17 @@
-package com.example.splab2;
+package com.example.splab2.model;
 
 import lombok.Data;
 
 @Data
-public class Image implements Element{
-    private String url;
+public class Table implements Element{
+    private String something;
 
-    public Image(String url) {
-        this.url = url;
+    public Table(String something) {
+        this.something = something;
     }
 
     public void print() {
-        System.out.println("Image with url: " + url);
+        System.out.println("Something: " + something);
     }
 
     @Override
@@ -29,3 +29,4 @@ public class Image implements Element{
         return null;
     }
 }
+

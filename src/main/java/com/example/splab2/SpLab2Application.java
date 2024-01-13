@@ -1,6 +1,6 @@
 package com.example.splab2;
 
-import org.springframework.boot.SpringApplication;
+import com.example.splab2.model.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication

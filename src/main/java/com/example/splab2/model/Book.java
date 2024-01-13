@@ -1,7 +1,7 @@
-package com.example.splab2;
+package com.example.splab2.model;
 
 import java.util.ArrayList;
-import java.util.List;
+
 public class Book extends Section{
     private ArrayList<Author> authors=new ArrayList<>();
     public Book(String title) {
